@@ -8,7 +8,8 @@ def topKFrequent(nums, k):
         else:
             map[nums[i]] = 1 
     
-    map = [(v, k) for k, v in map.items()]; sorted(map)
+    map = [(v, k) for k, v in map.items()]; map.sort(reverse=True)
+    print(map)
     res = []
     for i in range(k):
         res.append(map[i][1])
@@ -17,4 +18,4 @@ def topKFrequent(nums, k):
 
 
 
-print(topKFrequent([1,1,1,2,2,3], 2))
+print(topKFrequent([3,0,1,0], 1))
