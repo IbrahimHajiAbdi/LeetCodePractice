@@ -1,13 +1,8 @@
 def groupAnagrams(strs):
-    ls = strs[:]
-    ans = []
+    ls = {}
     
-    for i in range(len(ls)):
-        ls[i] = sorted(ls[i])
-        
-    for i in range(len(ls)):
-        inAns = False
-        for j in range(i, len(ls)):
-            if ls[i] == ls[j]:
-                
+    for i in range(len(strs)):
+        letters = [0 for i in range(26)]
+        for j in range(strs[i]):
+            
                 
