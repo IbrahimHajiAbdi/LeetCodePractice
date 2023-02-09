@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def topKFrequent(nums, k):
     if len(nums) <= 1:
         return nums
