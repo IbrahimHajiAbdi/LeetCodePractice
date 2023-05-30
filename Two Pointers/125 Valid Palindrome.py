@@ -5,6 +5,9 @@ def isPalindrome(s):
     print(s)
     basePtr = 0
     endPtr = len(s)-1
+    for i in range(len(s)//2):
+        if s[basePtr+i] != s[endPtr-i]:
+            return False
+    return True 
     
-    
-isPalindrome("123aAAAAAAsd'#")
+print(isPalindrome("aaavv"))
