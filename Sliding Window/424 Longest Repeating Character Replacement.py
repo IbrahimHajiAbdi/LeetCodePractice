@@ -12,7 +12,9 @@ def characterReplacement(s, k):
         if k > 0:
           k -= 1
           substring += char
-        else: substring = ""
+        else: 
+          substring = ""
+          k = initial_k_val
       else: substring += s[ptr]
       ptr += 1
       res = max(res, len(substring))
@@ -31,10 +33,12 @@ def characterReplacement2(s, k):
         char_dict[char] += char
       else: char_dict[char] += "_"
       ptr += 1
-  
-  print(char_dict)
-  
+  for k, v in char_dict.items():
+    print(k, v)
+      
+        
+    
   return res
   
-string = "AAKRSCDCSONAJNHLBMDQGIFCPEKPOHQIHLTDIQGEKLRLCQNBOHNDQGHJPNDQPERNFSSSRDEQLFPCCCARFMDLHADJADAGNNSBNCJQOFBABBA"
-print(characterReplacement2(string, 4))
+string = "IMNJJTRMJEGMSOLSCCQICIHLQIOGBJAEHQOCRAJQMBIBATGLJDTBNCPIFRDLRIJHRABBJGQAOLIKRLHDRIGERENNMJSDSSMESSTR"
+print(characterReplacement2(string, 2))
