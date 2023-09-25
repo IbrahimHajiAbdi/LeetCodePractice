@@ -8,6 +8,17 @@ def spiralMatrix(matrix):
                 return True
             else: 
                 return False
+        def checkIfComplete():
+            unprocessedCoords = []
+            for y in replicaMatrix:
+                for x in y:
+                    if replicaMatrix[y][x] == 1:
+                        unprocessedCoords.append([y, x])
+            if len(unprocessedCoords) == 1:
+                return unprocessedCoords[0]
+            else: 
+                return None
+
         while True:
             while x < len(matrix[0]) - 1:
                 if checkPosEmpty(y, x):
@@ -33,6 +44,9 @@ def spiralMatrix(matrix):
                     y -= 1  
                 else:
                     break  
+            if checkIfComplete() != None:
+                y, x = checkIfComplete()
+                res.append(matrix[y, x])
             if len(res) == len(matrix[0]) * len(matrix):
                 return res
             else: print(res)
