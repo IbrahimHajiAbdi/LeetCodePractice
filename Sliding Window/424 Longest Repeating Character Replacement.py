@@ -3,42 +3,40 @@ def characterReplacement(s, k):
   res = 0
   initial_k_val = k
   for char in chars:
-    substring = ""
+    count = 0
     ptr = 0
     k = initial_k_val
     while (ptr < len(s)):
-      # print(f"substring: {substring}\nptr: {ptr}\n")
+      print(f"substring: {count}\nptr: {ptr}\n")
       if s[ptr] != char:
         if k > 0:
           k -= 1
-          substring += char
+          count += 1
         else: 
-          substring = ""
+          count = 0
           k = initial_k_val
-      else: substring += s[ptr]
+      else: count += 1
       ptr += 1
-      res = max(res, len(substring))
+      res = max(res, count)
   return res
 
 def characterReplacement2(s, k):
-  chars = set(s)
   res = 0
-  char_dict = {}
+  chars = set(s)
+  chars_dict = {}
   
-  for char in chars:
-    ptr = 0
-    char_dict[char] = ""
-    while (ptr < len(s)):
-      if s[ptr] == char:
-        char_dict[char] += char
-      else: char_dict[char] += "_"
-      ptr += 1
-  for k, v in char_dict.items():
-    print(k, v)
-      
-        
+  for i, char in enumerate(s):
+    if char in chars_dict:
+      chars_dict[char] += 1
+    else: chars_dict[char] = 1
     
-  return res
+  window_size = max(chars_dict.values()) + k
+  l, r = 0, window_size - 1
   
-string = "IMNJJTRMJEGMSOLSCCQICIHLQIOGBJAEHQOCRAJQMBIBATGLJDTBNCPIFRDLRIJHRABBJGQAOLIKRLHDRIGERENNMJSDSSMESSTR"
-print(characterReplacement2(string, 2))
+  for i in range(len(s) - window_size + 1):
+    
+  
+  return res
+
+string = "SDSSMESS"
+print(characterReplacement(string, 0))
