@@ -11,3 +11,4 @@ def multiply(num1: str, num2: str) -> str:
     return str(num1_int*num2_int)
 
 print(multiply("123", "456"))
+print("hello world")
