@@ -7,4 +7,3 @@ class ListNode:
         self.next = next
         
 def reorderList(head: Optional[ListNode]) -> None:
-    
