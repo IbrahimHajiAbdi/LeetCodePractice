@@ -9,7 +9,9 @@ class Solution:
             if sum(curr) > target:
                 return
             if sum(curr) == target:
+                nonlocal res
                 res.append(curr)
+                print("res:", res)
                 return 
             for i in range(len(candidates)):
                 # print(candidates[i])
@@ -22,5 +24,5 @@ class Solution:
 sol = Solution()
 
 print(sol.combinationSum([2,3,6,7], 7))
-print(sol.combinationSum([2,3,5], 5))
-print(sol.combinationSum([2], 1))
+# print(sol.combinationSum([2,3,5], 5))
+# print(sol.combinationSum([2], 1))
