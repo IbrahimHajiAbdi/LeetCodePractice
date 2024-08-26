@@ -10,7 +10,7 @@ class Solution:
                 return -1
             return amount // coins[0]
         seen = {} # amount : int
-        @cache
+
         def dp(remain: int) -> int:
             if remain == 0:
                 return 1
